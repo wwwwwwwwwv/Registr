@@ -1,13 +1,17 @@
 function createProfile() {
   const username = document.getElementById('username').value;
+  username.value=' '
+
   
   if (username) {
+
       let profiles = JSON.parse(localStorage.getItem('profiles')) || [];
       profiles.push(username);
       localStorage.setItem('profiles', JSON.stringify(profiles));
       //
+
       displayProfiles();
-      username.value =' '
+
   }
 }
 
@@ -44,8 +48,6 @@ function displayProfiles() {
       profilesContainer.appendChild(profileElement);
   });
 }
-
-
 
 
 
